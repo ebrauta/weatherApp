@@ -1,4 +1,4 @@
-const KEY = "309153f89e90644acc40547f48e8a350";
+const KEY = process.env.KEY;
 
 
 const selectChangeHandle = () => {

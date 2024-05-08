@@ -1,9 +1,40 @@
-const KEY = process.env.KEY;
+const KEY = "309153f89e90644acc40547f48e8a350";
 
 
 const selectChangeHandle = () => {
     const city = document.querySelector('.input-city').value;
     searchCity(city);
+}
+
+const populateSelectStates = async () => {
+    const data = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome`)
+        .then(response => response.json())
+    data.forEach(({nome, sigla}) => {
+        let option = document.createElement('option');
+        option.value=sigla;
+        option.innerText=nome;
+        option.classList.add('state-options')
+        document.querySelector('.input-state').appendChild(option);
+    });
+}
+populateSelectStates();
+document.querySelector('.input-state').addEventListener('change', (evt) => {
+    populateSelectCities(evt.target.value)
+    document.querySelector('.input-city').classList.remove('d-none');
+    populateDataInScreen({cod: '400'});
+})
+
+const populateSelectCities = async (state) => {
+    document.querySelector('.input-city').innerHTML = `<option value="" class="city-options">Escolha uma cidade</option>`
+    const data = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${state}/municipios`)
+        .then(response => response.json())
+    data.forEach(({nome}) => {
+        let option = document.createElement('option');
+        option.value=nome;
+        option.innerText=nome;
+        option.classList.add('city-options')
+        document.querySelector('.input-city').appendChild(option);
+    });
 }
 
 const searchCity = async (city) => {

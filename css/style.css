@@ -23,9 +23,9 @@ body{
     max-width: 450px;
 }
 
-.input-city{
+.input-state, .input-city{
     border: none;
-    margin: auto;
+    margin: 5px auto;
     outline: 0;
     padding: 10px;
     border-radius: 15px;
@@ -35,8 +35,9 @@ body{
     width: calc(100% - 10px);
 }
 
-.input-city option{
+.state-options, .city-options{
     background: #7c7c7c;
+    color: #fff;
 }
 
 .medium-box{

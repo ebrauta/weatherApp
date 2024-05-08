@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBR - Previsão do Tempo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="big-box">
+        <select class="input-city" placeholder="Digite o nome da cidade">
+            <option value="">Escolha uma cidade</option>
+            <option value="Vila Velha">Vila Velha</option>
+            <option value="Curitiba">Curitiba</option>
+            <option value="Manaus">Manaus</option>
+        </select>
+        <div class="medium-box">
+            <h2 class="city"></h2>
+            <p class="temperature d-none"></p>
+            <div class="little-box">
+                <img src="https://openweathermap.org/img/wn/04n.png" alt="icone-info-do-tempo" class="img-forecast d-none">
+                <p class="text-forecast d-none"></p>
+            </div>
+            <p class="humidity d-none"></p>
+        </div>
+    </section>
+    <script type="module" src="js/scripts.js"></script>
+
+</body>
+</html>

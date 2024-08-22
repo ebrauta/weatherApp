@@ -1,6 +1,3 @@
-const KEY = "309153f89e90644acc40547f48e8a350";
-
-
 const selectChangeHandle = () => {
     const city = document.querySelector('.input-city').value;
     searchCity(city);
